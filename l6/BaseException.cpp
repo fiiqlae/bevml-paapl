@@ -3,15 +3,15 @@
 #include <exception>
 #include <iostream>
 
-class LabaException: public std::exception
+class BaseException: public std::exception
 {
   const char* custom_message;
 public:
-  LabaException(const char* x) : custom_message(x) {};
+  BaseException(const char* x) : custom_message(x) {};
 
 	const char * what () const throw ()
   {
-    std::cout << "an exception has occured during the lab execution\n";
+    std::cout << "an exception has occured\n";
   	return custom_message;
   }
 };

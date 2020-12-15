@@ -20,7 +20,6 @@ class LinkedList
     head.reset(new Node<T>);
     tail.reset(new Node<T>);
     head->next = tail.get();
-    tail->previous = head.get();
   }
 
 public:
@@ -31,9 +30,7 @@ public:
   {
     Node<T> *n = new Node<T>(value);
     n->next = head->next;
-    n->next->previous = n; 
     head->next = n;
-    n->previous = head.get();
     size++;
   }
   
@@ -43,9 +40,7 @@ public:
     Node<T> *tmp = head.get();
     while(tmp->next != tail.get()) tmp = tmp->next;
     tmp->next = n;
-    n->previous = tmp;
     n->next = tail.get();
-    tail.get()->previous = n;
     size++;
   }
 

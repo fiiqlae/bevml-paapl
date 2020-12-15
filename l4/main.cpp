@@ -1,7 +1,7 @@
 #include <iostream>
 #include "ll.cpp"
 #include "lli.cpp"
-#include "./resort.cpp"
+#include "./perscription_drug.cpp"
 
 void print_menu()
 {
@@ -14,10 +14,10 @@ void print_menu()
 
 int main() 
 {
-    LinkedList<Resort> list;
+    LinkedList<PerscriptionDrug> list;
     
     int selection = 0;
-    Resort r;
+    PerscriptionDrug r;
     while(1)
     {
       print_menu();

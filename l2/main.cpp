@@ -1,13 +1,13 @@
 #include <iostream>
 
 #include "./database.cpp"
-#include "./resort.cpp"
+#include "./perscription_drug.cpp"
 
 void print_menu() {
   std::cout << "1 -- add" 
          << std::endl << "2 -- alter by id" 
-         << std::endl << "3 -- select * from resorts" 
-         << std::endl << "4 -- delete from resort"
+         << std::endl << "3 -- select * from drugs" 
+         << std::endl << "4 -- delete from drugs"
          << std::endl;
 }
 

@@ -1,5 +1,5 @@
 #include "./file_manager.cpp"
-#include "./resort.cpp"
+#include "./perscription_drug.cpp"
 
 #include <iostream>
 
@@ -14,8 +14,8 @@ void print_menu()
 int main() 
 {
   int selection = 0;
-  Resort r, buffer;
-  FileManager<Resort> fm("A.bin");
+  PerscriptionDrug r, buffer;
+  FileManager<PerscriptionDrug> fm("A.bin");
   while(1)
   {
     print_menu();

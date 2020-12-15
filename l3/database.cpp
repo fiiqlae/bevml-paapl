@@ -1,11 +1,11 @@
-#include "./resort.cpp"
-#include <deque>
+#include "./perscription_drug.cpp"
+#include <vector>
 #include <iostream>
 
 class DB
 {
 private:
-  std::deque<Resort> _resorts;
+  std::vector<PerscriptionDrug> _perscription_drugs;
   int _current_id;
 public:
   
@@ -13,21 +13,47 @@ public:
 
   void add()
   {
-    Resort r;
+    PerscriptionDrug r;
     std::cin >> r;
-    _resorts.push_back(r);
+    _perscription_drugs.push_back(r);
   }
 
-  void pop_front()
+  void update()
   {
-    _resorts.pop_front();
+    int selection;
+    PerscriptionDrug r;
+    std::cout << "Enter the ID: ";
+    std::cin >> selection;
+    r = _perscription_drugs[selection];
+    std::cout << r;
+    std::cin >> r;
+    _perscription_drugs[selection] = r;
+  }
+  
+  void get()
+  {
+    int selection;
+    PerscriptionDrug r;
+    std::cout << "Enter the ID: ";
+    std::cin >> selection;
+    r = _perscription_drugs[selection];
+    std::cout << r;
+  }
+
+  void delete_record()
+  {
+    int selection;
+    std::cout << "Enter the ID: ";
+    std::cin >> selection;
+    _perscription_drugs[selection] = _perscription_drugs.back();
+    _perscription_drugs.pop_back();
   }
 
   void print_all()
   {
-    for (auto i = _resorts.begin(); i != _resorts.end(); ++i)
+    for(int i = 0; i < _perscription_drugs.size(); i++) 
     {
-      std::cout << *i;
+      std::cout << i << " " << _perscription_drugs[i];
     }
   }
 

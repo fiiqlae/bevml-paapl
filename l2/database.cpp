@@ -1,11 +1,11 @@
-#include "./resort.cpp"
+#include "./perscription_drug.cpp"
 #include <vector>
 #include <iostream>
 
 class DB
 {
 private:
-  std::vector<Resort> _resorts;
+  std::vector<PerscriptionDrug> _perscription_drugs;
   int _current_id;
 public:
   
@@ -13,30 +13,30 @@ public:
 
   void add()
   {
-    Resort r;
+    PerscriptionDrug r;
     std::cin >> r;
-    _resorts.push_back(r);
+    _perscription_drugs.push_back(r);
   }
 
   void update()
   {
     int selection;
-    Resort r;
+    PerscriptionDrug r;
     std::cout << "Enter the ID: ";
     std::cin >> selection;
-    r = _resorts[selection];
+    r = _perscription_drugs[selection];
     std::cout << r;
     std::cin >> r;
-    _resorts[selection] = r;
+    _perscription_drugs[selection] = r;
   }
   
   void get()
   {
     int selection;
-    Resort r;
+    PerscriptionDrug r;
     std::cout << "Enter the ID: ";
     std::cin >> selection;
-    r = _resorts[selection];
+    r = _perscription_drugs[selection];
     std::cout << r;
   }
 
@@ -45,15 +45,15 @@ public:
     int selection;
     std::cout << "Enter the ID: ";
     std::cin >> selection;
-    _resorts[selection] = _resorts.back();
-    _resorts.pop_back();
+    _perscription_drugs[selection] = _perscription_drugs.back();
+    _perscription_drugs.pop_back();
   }
 
   void print_all()
   {
-    for(int i = 0; i < _resorts.size(); i++) 
+    for(int i = 0; i < _perscription_drugs.size(); i++) 
     {
-      std::cout << i << " " << _resorts[i];
+      std::cout << i << " " << _perscription_drugs[i];
     }
   }
 

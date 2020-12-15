@@ -1,12 +1,13 @@
 #include <iostream>
 
 #include "./database.cpp"
-#include "./resort.cpp"
+#include "./perscription_drug.cpp"
 
 void print_menu() {
   std::cout << "1 -- add" 
-         << std::endl << "2 -- select * from resorts" 
-         << std::endl << "3 -- pop front"
+         << std::endl << "2 -- alter by id" 
+         << std::endl << "3 -- select * from drugs" 
+         << std::endl << "4 -- delete from drugs"
          << std::endl;
 }
 
@@ -22,11 +23,15 @@ int main() {
         db.add();  
         break;
       }
-      case 2:
+      case 2: {
+        db.update();
+        break;
+      }
+      case 3:
         db.print_all();
         break;
       case 4:
-        db.pop_front();
+        db.delete_record();
         break;
       default:
         break;
